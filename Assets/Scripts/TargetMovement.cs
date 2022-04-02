@@ -18,7 +18,7 @@ public class TargetMovement : MonoBehaviour
 
     }
 
-    void Update()
+    void Update() 
     {
         float tickTime = 0.3f;
         if (isFall == 1) {
