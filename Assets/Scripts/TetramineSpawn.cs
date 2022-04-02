@@ -5,10 +5,15 @@ using UnityEngine;
 public class TetramineSpawn : MonoBehaviour
 {
 
-    public GameObject []Tetromines = new GameObject[7];
+    public GameObject [] tetrominos = new GameObject[7];
+    public GameObject[] sprites = new GameObject[7];
+    private int nextShape;
 
-    void Start()
+void Start()
     {
+        Debug.Log(1);
+        nextShape = Random.Range(0, 7);
+        sprites[nextShape].transform.SetPositionAndRotation(new Vector3(-6.5f, 26.5f, -0.5f), this.transform.rotation);
         NewTetromino();
     }
 
@@ -18,6 +23,9 @@ public class TetramineSpawn : MonoBehaviour
     }
 
     public void NewTetromino(){
-        Instantiate(Tetromines[Random.Range(0, 7)], transform.position, transform.rotation);
+        Instantiate(tetrominos[nextShape], transform.position, transform.rotation);
+        sprites[nextShape].transform.SetPositionAndRotation(new Vector3(-6.5f, 26.5f, -0.5f), this.transform.rotation);
+        nextShape = Random.Range(0, 7);
+        sprites[nextShape].transform.SetPositionAndRotation(new Vector3(-5.5f, 15.5f, -0.5f), this.transform.rotation);
     }
 }

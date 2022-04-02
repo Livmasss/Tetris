@@ -20,9 +20,14 @@ public class TargetMovement : MonoBehaviour
 
     void Update()
     {
+        float tickTime = 0.3f;
         if (isFall == 1) {
             //Movement
-            if (Time.time > timeMark + 0.3f){
+            if (Input.GetKey(KeyCode.DownArrow)){
+                tickTime = 0.07f;
+            }
+
+            if (Time.time > timeMark + tickTime){
                 this.transform.position += new Vector3(0, -1, 0) * fallingSpeed;
                 timeMark = Time.time;
                 if (!CheckTheBorders()){
@@ -44,24 +49,36 @@ public class TargetMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow)){
                 this.transform.transform.RotateAround(transform.TransformPoint(axisOfRotation), new Vector3(0, 0, 1), 90);
                 if (!CheckTheBorders())
-                    this.transform.transform.position += new Vector3(1, 0, 0);
+                    this.transform.position += new Vector3(1, 0, 0);
                 if (!CheckTheBorders())
-                    this.transform.transform.position += new Vector3(-2, 0, 0);
+                    this.transform.position += new Vector3(-2, 0, 0);
                 if (!CheckTheBorders())
-                    this.transform.transform.position += new Vector3(3, 0, 0);
+                    this.transform.position += new Vector3(3, 0, 0);
                 if (!CheckTheBorders())
-                    this.transform.transform.position += new Vector3(-4, 0, 0);
+                    this.transform.position += new Vector3(-4, 0, 0);
+                if (!CheckTheBorders()){
+                    this.transform.position  += new Vector3(2, 0, 0);
+                    this.transform.RotateAround(transform.TransformPoint(axisOfRotation), new Vector3(0, 0, 1),-90);
+                }
                 
             }
         }
         else if ( isFall == 0) {
-            FindObjectOfType<TetramineSpawn>().NewTetromino();
             isFall = 2;
-            
+            bool flag = true;
+
             foreach (Transform child in this.transform){
                 int intedX = Mathf.FloorToInt(child.position.x);
                 int intedY = Mathf.FloorToInt(child.position.y);
                 TargetMovement.matrix[intedX, intedY] = child;
+                
+                //Lose
+                if (intedY == 19){
+                    flag = false;
+                }
+            }
+            if (flag){
+                FindObjectOfType<TetramineSpawn>().NewTetromino();
             }
         }
     }
