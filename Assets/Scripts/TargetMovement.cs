@@ -44,13 +44,17 @@ public class TargetMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow)){
                 this.transform.transform.RotateAround(transform.TransformPoint(axisOfRotation), new Vector3(0, 0, 1), 90);
                 if (!CheckTheBorders())
-                    this.transform.transform.position += new Vector3(1, 0, 0);
+                    this.transform.position += new Vector3(1, 0, 0);
                 if (!CheckTheBorders())
-                    this.transform.transform.position += new Vector3(-2, 0, 0);
+                    this.transform.position += new Vector3(-2, 0, 0);
                 if (!CheckTheBorders())
-                    this.transform.transform.position += new Vector3(3, 0, 0);
+                    this.transform.position += new Vector3(3, 0, 0);
                 if (!CheckTheBorders())
-                    this.transform.transform.position += new Vector3(-4, 0, 0);
+                    this.transform.position += new Vector3(-4, 0, 0);
+                if (!CheckTheBorders()){
+                    this.transform.position  += new Vector3(2, 0, 0);
+                    this.transform.RotateAround(transform.TransformPoint(axisOfRotation), new Vector3(0, 0, 1),-90);
+                }
                 
             }
         }
