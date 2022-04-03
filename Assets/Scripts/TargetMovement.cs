@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TargetMovement : MonoBehaviour
@@ -69,8 +67,9 @@ public class TargetMovement : MonoBehaviour
             foreach (Transform child in this.transform){
                 int intedX = Mathf.FloorToInt(child.position.x);
                 int intedY = Mathf.FloorToInt(child.position.y);
-                TargetMovement.matrix[intedX, intedY] = child;
-                
+                if (intedY <= 19){
+                    TargetMovement.matrix[intedX, intedY] = child;
+                }
             }
             if (LoseAndScoring.LoseChecking()){
                 FindObjectOfType<TetramineSpawn>().NewTetromino();
@@ -85,8 +84,11 @@ public class TargetMovement : MonoBehaviour
             if (intedX >= width || intedX < 0 || intedY < 0)
                 return false;
                 
-            if (matrix[intedX, intedY] != null)
-                return false; 
+            if (intedY < 20){
+                if (matrix[intedX, intedY] != null){
+                    return false;
+                }
+            }
         }
         return true;
     }

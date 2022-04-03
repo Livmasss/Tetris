@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TetramineSpawn : MonoBehaviour
@@ -9,7 +7,7 @@ public class TetramineSpawn : MonoBehaviour
     public GameObject[] sprites = new GameObject[7];
     private int nextShape;
 
-    public void StartGame()
+    public void Start()
     {
         nextShape = Random.Range(0, 7);
         sprites[nextShape].transform.SetPositionAndRotation(new Vector3(-6.5f, 26.5f, -0.5f), this.transform.rotation);

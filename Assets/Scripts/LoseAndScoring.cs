@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class LoseAndScoring : MonoBehaviour
 {
@@ -10,7 +8,8 @@ public class LoseAndScoring : MonoBehaviour
 
         for (int width = 0; width < 10; width ++){
             if (matrix[width, 19] != null){
-                FindObjectOfType<UIDocument>().enabled = true;
+                SceneManager.LoadScene("MainMenu");
+                SceneManager.UnloadSceneAsync(1);
                 return false;
             }
         }
