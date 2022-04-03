@@ -47,7 +47,7 @@ public class TargetMovement : MonoBehaviour
 
             //Rotation  
             if (Input.GetKeyDown(KeyCode.UpArrow)){
-                this.transform.transform.RotateAround(transform.TransformPoint(axisOfRotation), new Vector3(0, 0, 1), 90);
+                this.transform.RotateAround(transform.TransformPoint(axisOfRotation), new Vector3(0, 0, 1), 90);
                 if (!CheckTheBorders())
                     this.transform.position += new Vector3(1, 0, 0);
                 if (!CheckTheBorders())
@@ -65,19 +65,14 @@ public class TargetMovement : MonoBehaviour
         }
         else if ( isFall == 0) {
             isFall = 2;
-            bool flag = true;
 
             foreach (Transform child in this.transform){
                 int intedX = Mathf.FloorToInt(child.position.x);
                 int intedY = Mathf.FloorToInt(child.position.y);
                 TargetMovement.matrix[intedX, intedY] = child;
                 
-                //Lose
-                if (intedY == 19){
-                    flag = false;
-                }
             }
-            if (flag){
+            if (LoseAndScoring.LoseChecking()){
                 FindObjectOfType<TetramineSpawn>().NewTetromino();
             }
         }

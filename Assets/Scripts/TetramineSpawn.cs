@@ -9,9 +9,8 @@ public class TetramineSpawn : MonoBehaviour
     public GameObject[] sprites = new GameObject[7];
     private int nextShape;
 
-void Start()
+    public void StartGame()
     {
-        Debug.Log(1);
         nextShape = Random.Range(0, 7);
         sprites[nextShape].transform.SetPositionAndRotation(new Vector3(-6.5f, 26.5f, -0.5f), this.transform.rotation);
         NewTetromino();
@@ -24,7 +23,7 @@ void Start()
 
     public void NewTetromino(){
         Instantiate(tetrominos[nextShape], transform.position, transform.rotation);
-        sprites[nextShape].transform.SetPositionAndRotation(new Vector3(-6.5f, 26.5f, -0.5f), this.transform.rotation);
+        sprites[nextShape].transform.SetPositionAndRotation(new Vector3(-600.5f, 26.5f, -0.5f), this.transform.rotation);
         nextShape = Random.Range(0, 7);
         sprites[nextShape].transform.SetPositionAndRotation(new Vector3(-5.5f, 15.5f, -0.5f), this.transform.rotation);
     }
