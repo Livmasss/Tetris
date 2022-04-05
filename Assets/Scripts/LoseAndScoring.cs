@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class LoseAndScoring : MonoBehaviour
 {
+
+    public static int score;
+
     public static bool LoseChecking(){
         Transform[,] matrix = TargetMovement.matrix;
 

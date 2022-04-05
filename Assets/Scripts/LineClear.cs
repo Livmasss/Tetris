@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LineClear : MonoBehaviour
 {
     private Transform[,] matrix;
+    int clearedLineCount = 0;
     void Start()
     {
         
@@ -13,6 +12,8 @@ public class LineClear : MonoBehaviour
     void Update()
     {
         this.matrix = TargetMovement.matrix;
+        clearedLineCount = 0;
+
         //Check for filling the line
         for (int height = 0; height < 20; height++){
             bool flag = true;
@@ -24,8 +25,13 @@ public class LineClear : MonoBehaviour
             }
 
             if (flag){
+                clearedLineCount += 1;
                 ClearTheLine(height);
             }
+        }
+        if (clearedLineCount > 1){
+            LoseAndScoring.score += clearedLineCount * 25;
+            Debug.Log(clearedLineCount);
         }
     }
 
@@ -34,6 +40,7 @@ public class LineClear : MonoBehaviour
             Destroy(matrix[width, height].gameObject);
             matrix[width, height] = null;
         }
+        LoseAndScoring.score += 50;
 
         //Falling not destroyed blocks
         foreach (Transform block in matrix){

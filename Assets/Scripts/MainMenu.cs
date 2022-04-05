@@ -2,11 +2,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class UI : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
     private Button button;
     private Label label;
-    private int score;
     private bool isFirst;
     void Start()
     {
