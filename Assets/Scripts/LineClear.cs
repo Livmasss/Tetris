@@ -48,8 +48,8 @@ public class LineClear : MonoBehaviour
                 int intedX = Mathf.FloorToInt(block.transform.position.x);
                 int intedY = Mathf.FloorToInt(block.transform.position.y);
                 
-                if (intedY != 0){
-                    while (matrix[intedX, intedY - 1] == null){
+                if (intedY > height){
+                    if (matrix[intedX, intedY - 1] == null){
                         matrix[intedX, intedY - 1] = matrix[intedX, intedY];
                         matrix[intedX, intedY - 1].position += new Vector3(0, -1, 0);
                         matrix[intedX, intedY] = null;
