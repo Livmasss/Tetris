@@ -8,8 +8,6 @@ public class PlayUI : MonoBehaviour
     {
         var rootVisualElement = FindObjectOfType<UIDocument>().rootVisualElement;
         score = rootVisualElement.Q<Label>("Score");
-
-        PlayUI.score.text = LoseAndScoring.score.ToString();
     }
 
     void LateUpdate()

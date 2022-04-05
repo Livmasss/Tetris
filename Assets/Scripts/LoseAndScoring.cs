@@ -5,6 +5,7 @@ public class LoseAndScoring : MonoBehaviour
 {
 
     public static int score;
+    private float timeMark;
 
     public static bool LoseChecking(){
         Transform[,] matrix = TargetMovement.matrix;
@@ -18,5 +19,15 @@ public class LoseAndScoring : MonoBehaviour
         }
 
         return true;
+    }
+
+    void Update() {
+        if ( Time.time > timeMark + 1.5f){
+            score -= 1;
+            if (score < 0){
+                score = 0;
+            }
+            timeMark = Time.time;
+        }
     }
 }
