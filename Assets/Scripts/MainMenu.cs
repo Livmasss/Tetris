@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
         button = rootVisualElement.Q<Button>("Restart");
 
         button.RegisterCallback<ClickEvent>(ev => LoadGame());
-        Debug.Log(1);
+        label.text = LoseAndScoring.score.ToString();
     }
 
     private void LoadGame(){
