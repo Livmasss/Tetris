@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement name="ScoreVisualElement" style="height: 232px; width: 262px; color: rgb(12, 12, 12); left: 282px; top: 215px; align-items: center; justify-content: center; -unity-background-image-tint-color: rgb(255, 107, 107);">
-        <ui:Label text="Score:" display-tooltip-when-elided="true" name="TextScore" style="height: 103px; width: 240px; left: 0; top: 0; color: rgb(255, 255, 255); font-size: 80px; justify-content: flex-start; align-items: flex-start; margin-bottom: 24px;" />
-        <ui:Label text="Label" display-tooltip-when-elided="true" name="Score" style="height: 91px; width: 234px; position: relative; font-size: 91px; color: rgb(255, 255, 255);" />
+        <ui:Label text="Score:" display-tooltip-when-elided="true" name="TextScore" style="height: 131px; width: 444px; left: 0; top: 0; color: rgb(255, 255, 255); font-size: 148px; justify-content: flex-start; align-items: flex-start; margin-bottom: 40px;" />
+        <ui:Label text="Label" display-tooltip-when-elided="true" name="Score" style="height: 143px; width: 362px; position: relative; font-size: 143px; color: rgb(255, 255, 255);" />
     </ui:VisualElement>
     <ui:Button text="Main Menu" display-tooltip-when-elided="true" name="MainMenuButton" style="height: 199px; top: 817px; width: 776px; font-size: 99px;" />
 </ui:UXML>
