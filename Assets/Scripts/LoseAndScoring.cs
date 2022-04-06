@@ -13,7 +13,6 @@ public class LoseAndScoring : MonoBehaviour
         for (int width = 0; width < 10; width ++){
             if (matrix[width, 19] != null){
                 SceneManager.LoadScene("MainMenu");
-                SceneManager.UnloadSceneAsync(1);
                 return false;
             }
         }

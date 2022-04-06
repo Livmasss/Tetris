@@ -23,7 +23,6 @@ public class MainMenu : MonoBehaviour
 
     private void LoadGame(){
         SceneManager.LoadScene(1);
-        SceneManager.UnloadSceneAsync(0);
         LoseAndScoring.score = 0;
     }
 }

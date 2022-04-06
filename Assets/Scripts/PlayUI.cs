@@ -21,7 +21,6 @@ public class PlayUI : MonoBehaviour
     }
 
     void ToMainMenu(){
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene(0);
     }
 }

@@ -3,5 +3,5 @@
         <ui:Label text="Score:" display-tooltip-when-elided="true" name="TextScore" style="height: 131px; width: 444px; left: 0; top: 0; color: rgb(255, 255, 255); font-size: 148px; justify-content: flex-start; align-items: flex-start; margin-bottom: 40px;" />
         <ui:Label text="Label" display-tooltip-when-elided="true" name="Score" style="height: 143px; width: 362px; position: relative; font-size: 143px; color: rgb(255, 255, 255);" />
     </ui:VisualElement>
-    <ui:Button text="Main Menu" display-tooltip-when-elided="true" name="MainMenuButton" style="height: 199px; top: 817px; width: 776px; font-size: 99px;" />
+    <ui:Button text="Main Menu" display-tooltip-when-elided="true" name="MainMenuButton" style="height: 199px; top: 50%; width: 776px; font-size: 99px;" />
 </ui:UXML>
